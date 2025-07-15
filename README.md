@@ -5,16 +5,6 @@
 Built with modern tooling for speed and flexibility:
 
 <div align="left"> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" /> 
-  
-### 🔧 Backend
-
-Robust API server built with .NET Core and integrates with Google Gemini for AI content generation:
-
-<div align="left"> <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" /> <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" /> <img src="https://img.shields.io/badge/ASP.NET%20Core-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET Core" /> <img src="https://img.shields.io/badge/REST%20API-6DB33F?style=for-the-badge&logo=postman&logoColor=white" alt="REST API" /> <img src="https://img.shields.io/badge/Gemini%20API-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini API" /> </div> 
-
-
-### 💻 Frontend (Vite React)
-
   <p>
   cd frontend<br>
   npm install<br>
@@ -22,8 +12,12 @@ Robust API server built with .NET Core and integrates with Google Gemini for AI 
   </p>
 
 By default, it runs at http://localhost:5173 and connects to the backend at https://localhost:5001.
+  
+### 🔧 Backend
 
-Update your vite.config.ts or vite.env as needed if using proxy or variables.
+Robust API server built with .NET Core and integrates with Google Gemini for AI content generation:
+
+<div align="left"> <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" /> <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" /> <img src="https://img.shields.io/badge/ASP.NET%20Core-5C2D91?style=for-the-badge&logo=dotnet&logoColor=white" alt="ASP.NET Core" /> <img src="https://img.shields.io/badge/REST%20API-6DB33F?style=for-the-badge&logo=postman&logoColor=white" alt="REST API" /> <img src="https://img.shields.io/badge/Gemini%20API-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini API" /> </div> 
 
 ### 🧠 How It Works
 
