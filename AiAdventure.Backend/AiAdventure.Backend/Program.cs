@@ -7,13 +7,17 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddHttpClient();
-builder.Services.AddCors(options => { options.AddDefaultPolicy(policy =>
+builder.Services.AddCors(options =>
 {
-    policy
-        .WithOrigins("http://localhost:5173")
-        .AllowAnyHeader()
-        .AllowAnyMethod();
-}); });
+    options.AddDefaultPolicy(policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+builder.Services.AddHttpClient<IGeminiService, GeminiService>();
 
 builder.Configuration.AddEnvironmentVariables();
 
@@ -28,6 +32,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseCors();
 app.UseHttpsRedirection();
 app.UseAuthorization();
