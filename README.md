@@ -6,7 +6,7 @@ Built with modern tooling for speed and flexibility:
 
 <div align="left"> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" /> 
   <p>
-  cd frontend<br>
+  cd [Root folder]<br>
   npm install<br>
   npm run dev<br>
   </p>
