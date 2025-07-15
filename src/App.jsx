@@ -6,7 +6,7 @@ function App() {
   const [story, setStory] = useState("")
 
   async function handleUserInput(userInput) {
-    const response = await fetch('http://localhost:4000/api/generate', {
+    const response = await fetch('http://localhost:5177/api/Ai', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt: userInput }),

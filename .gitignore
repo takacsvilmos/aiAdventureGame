@@ -1,4 +1,4 @@
-# Logs
+# === Node.js ===
 logs
 *.log
 npm-debug.log*
@@ -7,19 +7,50 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# === Frontend secrets ===
+.env
+
+# === .NET / C# ===
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.pdb
+*.cache
+*.dbmdl
+*.log
+*.vspscc
+*.vssscc
+
+# Rider / ReSharper / VS Code / VS
+.idea/
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
+.vs/
+*.csproj.user
 *.sln
+
+# Build output
+**/bin/
+**/obj/
+**/out/
+**/Debug/
+**/Release/
+
+# Publish folder
+**/publish/
+**/artifacts/
+
+# Local secrets
+**/appsettings.Development.json
+**/secrets.json
+
+# macOS / system
+.DS_Store
 *.sw?
-.env
+Thumbs.db
