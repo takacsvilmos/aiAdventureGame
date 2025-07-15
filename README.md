@@ -11,7 +11,7 @@ Built with modern tooling for speed and flexibility:
   npm run dev<br>
   </p>
 
-By default, it runs at http://localhost:5173 and connects to the backend at https://localhost:5001.
+By default, it runs at http://localhost:5173 and connects to the backend at https://localhost:5177.
   
 ### 🔧 Backend
 
