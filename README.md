@@ -58,5 +58,5 @@ This project uses Google Gemini API to generate text-based RPG responses.
 
 ### 🤝 Credits
 
-Created by Takács Vilmos
-My Backlog: https://github.com/users/takacsvilmos/projects/5/views/1
+<p>Created by Takács Vilmos<p/>
+<p>My Backlog: https://github.com/users/takacsvilmos/projects/5/views/1 <p/>
