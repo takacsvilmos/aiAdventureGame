@@ -31,5 +31,20 @@ namespace aiAdventureControllers
 
             return Ok(newPlayer);
         }
+
+        [HttpGet("{userId:guid}/stories")]
+        public async Task<ActionResult> GetStories([FromRoute] Guid userId)
+        {
+            var stories = await _dbContext.StorySessions
+                .Where(s => s.PlayerProfileId == userId)
+                .Select(s => new StorySessionDto
+                {
+                    Prompt = s.Prompt,
+                    Response = s.Response,
+                    CreatedAt = s.CreatedAt
+                }).ToListAsync();
+            
+            return Ok(stories);
+        }
     }
 }

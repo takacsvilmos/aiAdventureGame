@@ -21,9 +21,11 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
     });
 });
-builder.Services.AddHttpClient<IGeminiService, GeminiService>();
+builder.Services.AddScoped<IGeminiService, GeminiService>();
 
-builder.Services.AddDbContext<AiAdventureDbContext>(options => options.UseInMemoryDatabase("AiAdventureDemoDb"));
+builder.Services.AddSingleton<AiAdventureDbContext>(options => 
+    new AiAdventureDbContext(new DbContextOptionsBuilder<AiAdventureDbContext>()
+        .UseInMemoryDatabase("AiAdventureDemoDb").Options));
 
 builder.Configuration.AddEnvironmentVariables();
 

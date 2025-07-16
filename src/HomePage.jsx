@@ -6,24 +6,24 @@ function HomePage() {
     const navigate = useNavigate();
 
     const handleStartGame = async () => {
-        console.log("before if", username);
+
         if (!username.trim()) return;
-        console.log("after if", username);
+
         const response = await fetch(`http://localhost:5177/api/User/${username}`, {
             method: 'POST',
         });
-        //console.log("RESPONSE:", response);
+
         const player = await response.json();
-        console.log("Playerobject???", player);
-        if(player.id){
+
+        if (player.id) {
             localStorage.setItem('playerId', player.id);
             navigate('/game');
-        } else{
+        } else {
             console.error(response);
         }
-        
-        
-        
+
+
+
     }
 
     return (
