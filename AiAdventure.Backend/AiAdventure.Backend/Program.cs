@@ -1,4 +1,5 @@
 using AiAdventure.Backend.Data;
+using AiAdventure.Backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,9 +26,6 @@ builder.Services.AddHttpClient<IGeminiService, GeminiService>();
 builder.Services.AddDbContext<AiAdventureDbContext>(options => options.UseInMemoryDatabase("AiAdventureDemoDb"));
 
 builder.Configuration.AddEnvironmentVariables();
-
-var geminiKey = builder.Configuration["Gemini:ApiKey"];
-Console.WriteLine($"[DEBUG] Gemini API Key: {geminiKey ?? "NOT FOUND"}");
 
 var app = builder.Build();
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 
 function HomePage() {
@@ -6,17 +6,24 @@ function HomePage() {
     const navigate = useNavigate();
 
     const handleStartGame = async () => {
+        console.log("before if", username);
         if (!username.trim()) return;
-
-        const response = await fetch("url", {
+        console.log("after if", username);
+        const response = await fetch(`http://localhost:5177/api/User/${username}`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ username })
         });
-
+        //console.log("RESPONSE:", response);
         const player = await response.json();
-        localStorage.setItem('playerId', player.id);
-        navigate('/game');
+        console.log("Playerobject???", player);
+        if(player.id){
+            localStorage.setItem('playerId', player.id);
+            navigate('/game');
+        } else{
+            console.error(response);
+        }
+        
+        
+        
     }
 
     return (

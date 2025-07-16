@@ -17,8 +17,26 @@ namespace aiAdventureControllers
         [HttpPost("generate")]
         public async Task<ActionResult> Generate([FromBody] PromptRequest request)
         {
-            var result = await _geminiService.GenerateContentAsync(request.Prompt);
-            return Ok(result);
+            if (string.IsNullOrWhiteSpace(request.Prompt))
+            {
+                return BadRequest("Prompt cannot be empty.");
+            }
+
+            try
+            {
+                var result = await _geminiService.GenerateContentAsync(request.Prompt);
+
+                if (string.IsNullOrWhiteSpace(result))
+                {
+                    return NotFound("Could not generate content based on the prompt.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An internal error occurred.");
+            }
         }
     }
 }
