@@ -1,3 +1,6 @@
+using AiAdventure.Backend.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -18,6 +21,8 @@ builder.Services.AddCors(options =>
     });
 });
 builder.Services.AddHttpClient<IGeminiService, GeminiService>();
+
+builder.Services.AddDbContext<AiAdventureDbContext>(options => options.UseInMemoryDatabase("AiAdventureDemoDb"));
 
 builder.Configuration.AddEnvironmentVariables();
 
