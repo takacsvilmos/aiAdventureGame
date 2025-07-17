@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate }
+ from "react-router-dom"
 
 function HomePage() {
     const [username, setUsername] = useState("");
@@ -17,6 +18,7 @@ function HomePage() {
 
         if (player.id) {
             localStorage.setItem('playerId', player.id);
+            localStorage.setItem('username', username);
             navigate('/game');
         } else {
             console.error(response);
@@ -27,18 +29,18 @@ function HomePage() {
     }
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
-            <h1 className="text-4xl font-bold mb-6">AI Adventure Game</h1>
+        <div className="home-page-container">
+            <h1 className="home-page-title">AI Adventure Game</h1>
             <input
                 type="text"
                 placeholder="Enter your name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="p-2 rounded text-black mb-4"
+                className="home-page-input"
             />
             <button
                 onClick={handleStartGame}
-                className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition"
+                className="home-page-button"
             >
                 Start Game
             </button>

@@ -19,7 +19,7 @@ namespace aiAdventureControllers
         }
 
         [HttpPost("{username}")]
-        public async Task<ActionResult> Create([FromRoute] string username)
+        public async Task<ActionResult<PlayerProfileDto>> Create([FromRoute] string username)
         {
             Console.WriteLine(username);
             var newPlayer = new PlayerProfile { Username = username };
@@ -29,7 +29,14 @@ namespace aiAdventureControllers
 
             DatabaseLogger.LogDatabaseState(_dbContext);
 
-            return Ok(newPlayer);
+            var playerDto = new PlayerProfileDto
+            {
+                Id = newPlayer.Id,
+                Username = newPlayer.Username,
+                Bio = newPlayer.Bio
+            };
+
+            return Ok(playerDto);
         }
 
         [HttpGet("{userId:guid}/stories")]

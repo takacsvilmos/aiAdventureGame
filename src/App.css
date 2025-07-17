@@ -1,9 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+
 
 .logo {
   height: 6em;
@@ -12,10 +7,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #4a90e2);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop_shadow(0 0 2em #4a90e2);
 }
 
 @keyframes logo-spin {
@@ -33,10 +28,225 @@
   }
 }
 
-.card {
-  padding: 2em;
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--dark-grey-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 900px; 
+  width: 100%; 
+  margin: 0 auto; 
 }
 
-.read-the-docs {
-  color: #888;
+.home-page-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--blue-accent);
+  margin-bottom: 4rem;
+}
+
+.home-page-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--light-grey-card);
+  background-color: var(--light-grey-card);
+  color: var(--text-color);
+  margin-bottom: 15px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.home-page-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.home-page-button {
+  background-color: var(--blue-accent);
+  color: var(--dark-grey-bg);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; 
+}
+
+.home-page-button:hover {
+  background-color: #4fa3d1; 
+}
+
+.game-page-container {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 900px; 
+  margin: 0 auto; 
+}
+
+.game-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.game-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--blue-accent);
+}
+
+.story-box,
+.history-box {
+  background-color: var(--light-grey-card);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(97, 218, 251, 0.3); 
+  overflow-y: auto;
+  max-height: 300px; 
+}
+
+.save-buttons-container {
+  background-color: var(--light-grey-card);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.save-prompt {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.save-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.save-button-yes {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+.save-button-yes:hover {
+  background-color: #45a049;
+}
+
+.save-button-no {
+  background-color: #f44336; 
+  color: white;
+}
+
+.save-button-no:hover {
+  background-color: #da190b;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column; 
+  width: 100%;
+  margin-top: 20px;
+}
+
+.game-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--light-grey-card);
+  background-color: var(--light-grey-card);
+  color: var(--text-color);
+  margin-bottom: 10px; 
+  width: 100%;
+}
+
+.game-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-button {
+  background-color: var(--blue-accent);
+  color: var(--dark-grey-bg);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #4fa3d1;
+}
+
+.history-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--blue-accent);
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  background-color: var(--dark-grey-bg);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(97, 218, 251, 0.2); 
+}
+
+.history-item-prompt {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.history-item-response {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.player-display {
+  
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  color: var(--blue-accent);
+  font-weight: bold;
+  z-index: 10;
 }
