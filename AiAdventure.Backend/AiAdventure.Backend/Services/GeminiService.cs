@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using AiAdventure.Backend.Exceptions;
 
 public class GeminiService : IGeminiService
 {
@@ -14,6 +15,7 @@ public class GeminiService : IGeminiService
 
     public async Task<string> GenerateContentAsync(string prompt)
     {
+        
         var basePrompt =
             ", you are a game master in a role playing game and make answers accordingly. respond in max 3 sentences.";
         var requestBody = new
@@ -37,7 +39,12 @@ public class GeminiService : IGeminiService
         };
 
         var response = await _httpClient.SendAsync(request);
-        response.EnsureSuccessStatusCode();
+        
+        if (!response.IsSuccessStatusCode)
+        {
+            var errorContent = await response.Content.ReadAsStringAsync();
+            throw new GeminiApiException("Something went wrong with the AI service.", response.StatusCode, errorContent);
+        }
 
         var responseContent = await response.Content.ReadAsStringAsync();
         return responseContent;
